@@ -1,0 +1,32 @@
+{
+   "background": {
+      "scripts": [ "bower_components/file-saver/FileSaver.min.js", "bower_components/urijs/src/URI.min.js", "scripts/commons.js", "scripts/background.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "images/icon-19.png",
+         "38": "images/icon-38.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "tabSorter2"
+   },
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+   "default_locale": "en",
+   "description": "__MSG_appDescription__",
+   "icons": {
+      "128": "images/icon-128.png",
+      "16": "images/icon-16.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2oOAELciZtQxJNMrmvgLtWvAtzWY5mIFolN0Xs+Eeds2msckVDRDhF6Vq+Bi5GaPV+/OpSZE3ZdV7DgGhPrrj7f4HgnV67NcRarKo3gxS/0SQ2MVsA+9JAB0qeSltg2U70jKTLJzfJou6OX8Gi9+9gb6AyEY7imNeWaKCk3KL1TqLa6Mq7CnukL4VPw5WvjG2iYzdqqReJgUrZfxnIrqyvgcDD844Ics7PoaFWf3OsojWLWdnE41Hz4+Z9E0+i3hN4CU5+3/xUydid5XMwltmSGd2wTh1FkIFvld4gCXUgv/079ukecdt9MYlqUo7N7R7DTcTbv3VUSi4v17g9PjzwIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_appName__",
+   "options_ui": {
+      "chrome_style": true,
+      "open_in_tab": true,
+      "page": "options.html"
+   },
+   "permissions": [ "activeTab", "downloads", "management", "notifications", "tabs", "storage", "https://publicsuffix.org/*", "system.display" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.1.0",
+   "web_accessible_resources": [ "images/icon-48.png" ]
+}

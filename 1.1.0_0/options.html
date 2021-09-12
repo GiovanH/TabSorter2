@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TS2 Option Page</title>
+    <!-- <link href="styles/muscle.css" rel="stylesheet">
+    <link href="styles/tabsorter2.css" rel="stylesheet"> -->
+    <link href="styles/main.css" rel="stylesheet">
+  </head>
+  <body class="flex-container column optionsArea">
+      <style>
+          .container {
+            display: grid;
+
+            grid-template-columns: 1fr 3fr;
+            /*grid-template-rows: 100px 100px;*/
+
+            grid-template-areas:
+                  "head head head"
+                  "merge mergeOptions"
+                  "sort sortOptions"
+                  "split splitOptions"
+                  "footer footer footer";
+          }
+          .merge, .split, .sort, .save, .freeze, .misc {
+            text-align: end;
+            /*padding-right: 10px;*/
+            min-height: 50px;
+            font-size: 1em;
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+            min-height: 50px;
+            border-bottom: 2px #34495e dotted;
+            justify-content: flex-end;
+            justify-self: self-end;
+          }
+          .option{
+            width: fit-content;
+            min-width: 50%;
+            padding: .3em;
+            font-size: .9em;
+            border-bottom: 2px #34495e dotted;
+          }
+          .option > *{
+            padding-bottom: .2em;
+          }
+          .subContainer2 {
+            display: grid;
+
+            grid-template-columns: 1fr 2fr;
+            grid-template-areas:
+                  "choice description"
+          }
+      </style>
+    <h1 class="optionsTitle flex-item">Options </h1>
+    <hr class="flex-item "/>
+
+         <div class="container">
+        <!-- <div class="merge"> Merge </div>
+        <div class="mergeOptions option">
+          <div>Exclude list </div>
+          <textarea id="mergeOptions_exclude_list" rows="1" cols="33" placeholder="separate each domain by';'"></textarea>
+        </div> -->
+        <div class="split"> Split </div>
+        <div class="splitOptions option">
+         <!--  <div> Set Split Style to:
+            <select class="choice" id="splitOptions_style">
+              <option value="Verticals">Vertical</option>
+              <option value="Horizontals">Horizontal</option>
+              <option value="fullscreens">fullscreen</option>
+            </select>
+          </div> -->
+          <div> <input class="choice" type="checkbox" id="splitOptions_sideBySide" name="interest" > Side by Side Windows </div>
+          <div> <input class="choice" type="checkbox" id="splitOptions_forceDimensions" value="forceDimensions"> maintain previous window dimension (Experimental^^')</div>
+          <div> <input class="choice" type="checkbox" id="splitOptions_fromHere" name="interest"> Split from Here </div>
+
+          <label> How many windows? </label>
+          <select class="choice" id="splitOptions_numberOfWindows">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+
+        <div class="sort"> Sort </div>
+        <div class="sortOptions option">
+          <div> Sort By :
+            <select class="choice" id="sortOptions_type">
+              <option value="URL">URL</option>
+              <option value="Title">Title</option>
+              <option value="Regex">Regex</option>
+            </select>
+          </div>
+          <div> Override with Regex:  <input type="text" id="sortOptions_regexInput" width="100px"> (Experimental) </div>
+        </div>
+        <div class="save"> Save </div>
+        <div class="saveOptions option">
+<!--           <div>
+            Save -
+            <select class="choice" id="saveOptions_type">
+              <option value="Current">Current</option>
+              <option value="All">All</option>
+            </select>
+            window(s)
+          </div> -->
+          File Prefix: <input type="text" id="saveOptions_filePrefix" width="30" value="" placeholder="Ts2_SavedTabs" />
+        </div>
+<!--         <div class="freeze"> Freeze </div>
+        <div class="freezeOptions option">
+          <div>
+            <input class="choice" type="checkbox" id="freezeOptions_auto">
+            Auto freeze after X minute
+            <select class="choice" id="freezeOptions_time">
+              <option value="30">30 min</option>
+              <option value="60">60 min</option>
+              <option value="120">120 min</option>
+            </select>
+          </div>
+        </div> -->
+        <div class="misc"> Misc </div>
+        <div class="miscOptions option">
+          <div>
+            <input class="choice" type="checkbox" id="miscOptions_extendedIcon"> Enable extended Icon Display --- [# of tabs in current Window | # of windows]
+          </div>
+          <div>
+            <input class="choice" type="checkbox" id="miscOptions_compactMode"> Use Compact Mode
+          </div>
+<!--           <div>
+            <input class="choice" type="checkbox" id="miscOptions_autoSort"> Auto Sort on new page load complete
+          </div> -->
+          <div>
+            <input class="choice" type="checkbox" id="miscOptions_forceSort"> Force active sort - Very Experimental - (auto sort after a page load / refresh)
+          </div>
+          <div>
+            <input class="choice" type="checkbox" id="miscOptions_forcePinned"> Force Pinned Tabs - Very Experimental
+          </div>
+          <div>
+            <input class="choice" type="checkbox" id="miscOptions_popupClickFeedback"> Display feedback on button click
+          </div>
+          <div>
+            <button id="update_suffix_list"> Update </button> Public Suffix List
+          </div>
+        </div>
+      </div>
+
+    <!-- <hr class="flex-item "/> -->
+    <div id="status" class="flex-item" style="margin:10px auto;" ></div>
+
+    <div class="flex-item row"  style="justify-content: flex-end;">
+    <button id="save"class="flex-item"> Save <i class="ts-icon i-coffee" style="font-size: 14px"></i></button>
+    <button id="reset"class="flex-item"> Reset</button>
+
+    <!-- DONATION -->
+    <style>.bmc-button img{width: 27px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{line-height: 36px !important;height:37px !important;text-decoration: none !important;display:inline-flex !important;color:#ffffff !important;background-color:#FF813F !important;border-radius: 3px !important;border: 1px solid transparent !important;padding: 1px 9px !important;font-size: 22px !important;letter-spacing:0.6px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#ffffff !important;}</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/tabSorter2"><img src="images/BMC-btn-logo.svg" alt="Buy me a coffee"></a>
+    <!-- DONATION:END -->
+
+    </div>
+
+    <!-- build:js scripts/options-vendor.js -->
+    <!-- bower:js -->
+    <!-- <script src="bower_components/urijs/src/URI.js"></script> -->
+    <!-- <script src="bower_components/babel-polyfill/browser-polyfill.js"></script> -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/options.js -->
+    <script type="text/javascript" src="scripts/commons.js"></script>
+    <script src="scripts/options.js"></script>
+    <script src="scripts/analytics.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

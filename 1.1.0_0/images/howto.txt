@@ -1,0 +1,19 @@
+Using Sketch...
+
+get the font icon - download the demo and increase the font size as big as you want
+take a screenshot of that big icon and put it into sketch
+select the white background of the icon and delete it
+then crop it to a square length - lock the width and height
+shrink logo to 128 x 128
+
+then export using the multipliers
+
+
+0.125x   => 16 x 16
+0.15x  => 19 x 19
+0.3x  => 38 x 38
+1x => 128 x 128
+
+
+Or... group the logo / and click Scale [next to mask]
+and just the new size there

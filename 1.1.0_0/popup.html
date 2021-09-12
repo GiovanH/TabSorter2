@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="ts_theme">
+  <head>
+    <meta charset="utf-8">
+    <title>TS2 Popup Page</title>
+    <link href="styles/main.css" rel="stylesheet">
+    <!-- <link href="styles/muscle.css" rel="stylesheet"> -->
+    <!-- <link href="styles/tabsorter2.css" rel="stylesheet"> -->
+  </head>
+  <body>
+    <!-- <script src="bower_components/urijs/src/URI.js"></script> -->
+    <!-- <script src="bower_components/babel-polyfill/browser-polyfill.js"></script> -->
+<!--
+style ="
+        width: 250px;
+        height: 400px;
+    " -->
+
+<div class="flex-container column">
+  <div class="flex-item space-between row">
+    <!-- merges -->
+    <div class="flex-item "> <button class="button mergeBtn" href="#"> <i class="ts-icon i-merge"></i> <label class='ts-innerLabel'> Merge all </label> </button>  </div>
+    <div class="flex-item" style="margin-left:2%"> <button class="button mergeLastNBtn" href="#">
+      <i class="ts-icon i-merge" style="transform: rotate(45deg);"></i>
+      <label class='ts-innerLabel'> Merge last 2 </label> </button>
+    </div>
+  </div>
+    <div class="flex-item space-between row">
+    <!-- sort -->
+    <div class="flex-item"> <button class="button sortAllBtn" href="#"> <i class="ts-icon i-sort-all"></i> <label class='ts-innerLabel'> Sort all </label> </button> </div>
+    <div class="flex-item" style="margin-left:2%"> <button class="button sortCurrBtn" href="#"> <i class="ts-icon i-sort"></i> <label class='ts-innerLabel'> Sort current </label> </button> </div>
+  </div>
+  <div class="flex-item space-between column ">
+    <span class="testingArea donationBtn">Version 1.1 -------------------------<i class="ts-icon i-coffee" style="font-size: 14px"></i>
+    </span>
+      <!-- testing TO BE REMOVED-->
+      <!-- <input class="tgl-flat" id="toggleBtnTest" type="checkbox"/>
+      <label class="tgl-btn" for="toggleBtnTest"></label> -->
+
+      <!-- <div class="autocomplete" style="width:300px;">
+        <input id="searchTab" type="text" name="searchTab" placeholder="Search Tabs">
+        <div id="searchResults" class="searchResults"> </div>
+      </div> -->
+
+    <div class="flex-item space-between row">
+       <!-- undo -->
+      <!-- <div class="flex-item "> <button class="button undoBtn" href="#"> <i class="ts-icon i-undo"></i> <label class='ts-innerLabel'> Undo </label></button> </div> -->
+
+      <div class="flex-item"> <button class="button  splitBtnV" style="width:auto" href="#"> <i class="ts-icon i-split"></i> <label class='ts-innerLabel'> Split V </label> </button> </div>
+      <div class="flex-item" style="margin-left:2%"> <button class="button  shuffleBtn" href="#"> <i class="ts-icon i-shuffle"></i> <label class='ts-innerLabel'> Shuffle </label> </button> </div>
+    </div>
+    <div class="flex-item" >
+      <button class="button  splitBtnH" style="width:auto" href="#"> <i class="ts-icon i-split" style="transform: rotate(-90deg);"></i> <label class='ts-innerLabel'> Split H </label> </button>
+      <button class="button shrink-1x splitByGrpBtn" style="margin-left:2% !important; width:auto" href="#"> <i class="ts-icon i-flow-merge"></i> <label class='ts-innerLabel'> Split Domains </label> </button>
+    </div>
+    <div class="flex-item space-between row">
+      <div class="flex-item"> <button class="button  uniteBtn" href="#"> <i class="ts-icon i-unite-3"></i> <label class='ts-innerLabel'> Unite </label> </button> </div>
+      <div class="flex-item" style="margin-left:2%"> <button class="button  isolateBtn" href="#"> <i class="ts-icon i-isolate"></i> <label class='ts-innerLabel'> Isolate </label> </button> </div>
+    </div>
+    <div class="flex-item space-between row">
+      <div class="flex-item"> <button class="button  freezeBtn" href="#"> <i class="ts-icon i-microchip"></i> <label class='ts-innerLabel'> Freeze  </label> </button> </div>
+      <div class="flex-item" style="margin-left:2%"> <button class="button  closeBtn" href="#"> <i class="ts-icon i-cancel-2"></i> <label class='ts-innerLabel'> Close </label> </button> </div>
+    </div>
+    <!-- load -->
+    <div class="flex-item">
+      <button class="button loadBtn" for="file-upload" href="#"><i class="ts-icon i-upload"></i> <label class='ts-innerLabel'> Load </label>
+        <input type="file" name="file" id="file-upload" class="inputfile" multiple />
+      </button>
+    </div>
+
+    <div class="flex-item space-between row">
+      <div class="flex-item"> <button class="button saveBtn" href="#"> <i class="ts-icon i-save"></i> <label class='ts-innerLabel'> Save </label> </button> </div>
+      <div class="flex-item" style="margin-left:2%"> <button class="button saveAllBtn" href="#"> <i class="ts-icon i-save"></i> <label class='ts-innerLabel'> Save All </label> </button> </div>
+    </div>
+    <div class="flex-item"> <button class="button removeDuplicateBtn" href="#"> <i class="ts-icon i-doc"></i> <i class="ts-icon i-doc"></i> <label class='ts-innerLabel'> Deduplicate Current </label> </button> </div>
+
+    <div class="flex-item space-between row">
+<!--     <div class="flex-item"> <button class="button" href="#"> <i class="ts-icon i-coffee"></i> </button> </div> -->
+    <div class="flex-item"> <button class="button githubBtn" style="" > <i class="ts-icon i-github"></i><label class='ts-innerLabel'> </label> </button> </div>
+    <div class="flex-item"> <button class="button optionBtn" style=" flex-grow:initial" > <i class="ts-icon i-focus"></i> <label class='ts-innerLabel'> Options </label> </button> </div>
+<!--     <div class="flex-item column" style="margin-left:2%"> <button class="button" href="#"> <i class="ts-icon i-help"></i> </button>  </div> -->
+  </div>
+
+  </div>
+<!--   <div class="flex-item space-between row">
+    <div class="flex-item"> <button class="button  freezeBtn" href="#"> <i class="ts-icon i-microchip"></i> Freeze </button> </div>
+    <div class="flex-item" style="margin-left:2%"> <button class="button  closeBtn" href="#"> <i class="ts-icon i-cancel-2"></i> Close </button> </div>
+  </div> -->
+</div>
+
+    <!-- build:js scripts/popup.js -->
+    <script type="text/javascript" src="scripts/commons.js"></script>
+    <script src="scripts/popup.js"></script>
+    <script src="scripts/analytics.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

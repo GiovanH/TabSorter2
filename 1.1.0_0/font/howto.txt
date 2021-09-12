@@ -1,0 +1,6 @@
+select font from fontello.com
+use these for advance settings - units-per-em="1000" ascent="850" descent="-150" 
+
+download font 
+copy font files to app/font
+copy embedded.css to style/tabsorter2.css # the embedded gives it the nice bold look

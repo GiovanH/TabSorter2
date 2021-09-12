@@ -1,0 +1,10 @@
+{
+   "appDescription": {
+      "description": "The description of the application",
+      "message": "Split, Merge and Sort your tabs"
+   },
+   "appName": {
+      "description": "The name of the application",
+      "message": "tabSorter2"
+   }
+}

@@ -1,0 +1,134 @@
+/* Muscle - The Verbosely Intuitive Flex micro-framework */
+/******************** containers ***********************/
+.flex-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%; }
+
+.flex-item {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow-y: auto;
+  /* fill: will take up all available empty space */
+  /* will-change: transform; */
+  }
+  .flex-item.fill {
+    flex: auto; }
+
+/******************** direction ***********************/
+.column {
+  flex-direction: column;
+  /* height: 100vh; */
+  }
+
+.row {
+  flex-direction: row; }
+
+/********************** position *********************/
+.top {
+  align-self: flex-start; }
+
+.bottom {
+  align-self: flex-end; }
+
+.left {
+  margin-right: auto; }
+
+.right {
+  margin-left: auto; }
+
+.center {
+  align-self: center; }
+
+/******************** position helper ***********************/
+.column .right,
+.row .bottom {
+  align-self: flex-end; }
+
+.column .bottom {
+  margin-top: auto; }
+
+.column .top {
+  margin-bottom: auto; }
+
+/********************** MISC *********************/
+.wrap {
+  flex-wrap: wrap; }
+
+.stretch {
+  align-self: stretch; }
+
+.grow-1x {
+  flex-grow: 1; }
+
+.grow-2x {
+  flex-grow: 2; }
+
+.grow-3x {
+  flex-grow: 3; }
+
+.grow-4x {
+  flex-grow: 4; }
+
+.grow-5x {
+  flex-grow: 5; }
+
+.grow-6x {
+  flex-grow: 6; }
+
+.grow-7x {
+  flex-grow: 7; }
+
+.shrink-1x {
+  flex-shrink: 1; }
+
+.shrink-2x {
+  flex-shrink: 2; }
+
+.shrink-3x {
+  flex-shrink: 3; }
+
+.shrink-4x {
+  flex-shrink: 4; }
+
+.shrink-5x {
+  flex-shrink: 5; }
+
+.shrink-6x {
+  flex-shrink: 6; }
+
+.shrink-7x {
+  flex-shrink: 7; }
+
+.space-between {
+  justify-content: space-between; }
+
+.space-around {
+  justify-content: space-around; }
+
+.fullscreen {
+  height: 100vh; }
+
+/********************* Debug ***********************/
+.debug * {
+  border: 1px solid ghostwhite;
+  border-radius: 5px;
+  /*   margin: 1px; <-- debug margin overrides items margin... remove it */
+  padding: 3px;
+  position: relative; }
+
+.debug.flex-container {
+  background: #ffca98; }
+
+.debug .column,
+.debug.column {
+  background: #CCC;
+  border-radius: 5px; }
+
+.debug .row,
+.debug.row {
+  /*   // background: #0CC; */
+  background: darkturquoise;
+  border-radius: 5px; }

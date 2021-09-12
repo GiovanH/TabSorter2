@@ -1,0 +1,376 @@
+@import './tabsorter2.css';
+@import './muscle.css';
+@import './animation.css';
+
+/*
+popup body is regulated by this css body...
+anything above 800px and 600px width is ignored...
+
+https://stackoverflow.com/a/4671029
+*/
+body {
+  /* padding: 0 5px; */
+  font-size: 30px;
+  color: #ecf0f1;
+  width:250px;
+  /* font: 20px "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  /* margin: 5px; */
+}
+
+/* BUTTON STYLE */
+/* button css courtesy of Jamie Boelman :) https://codepen.io/boelmanj/pen/HjdIq */
+.button{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: inherit;
+  border-radius:3px;
+  margin: 0px 0px 13px 0px;
+  /* margin: 4% 0 !important;  - compact everything*/
+  /* margin: 8px 0px 5px 0px; */
+  /* margin: 10px 0px 10px 0px; */
+  /*padding:15px 0px;*/
+  border:none;
+  text-align:center;
+  text-decoration:none;
+  font: 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #ecf0f1;
+  user-select: none;
+  /*transition: all 0.5s ease;*/
+}
+html {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+html::-webkit-scrollbar { 
+  display: none; 
+}
+
+.push_down_effect {
+  top: 6px;
+  position: relative;
+  box-shadow: none;
+}
+
+.button:focus{
+  outline: none
+}
+
+.button:active{
+  position:relative;
+  top:6px;
+}
+
+.button:after{
+  box-shadow:0px 5px 15px 5px rgba(0,0,0,0.3);
+}
+
+.ts-icon{
+  font-size: var(--icon-size);
+  align-items: center;
+}
+
+.button{
+  width:100%;
+  flex-grow:1;
+  align-items: center;
+  /* -webkit-transform: translateZ(0); */
+}
+
+.flex-item{
+  width:100%;
+  height: fit-content;
+  overflow: hidden !important;
+}
+
+.testingArea{
+  color: #95a5a6;
+  font-size: 14px;
+  padding-top: 5px;
+  padding-bottom:2px;
+  transition: all .5s ease-in-out;
+}
+
+.optionsArea{
+  width: 50%;
+  margin: 20px auto;
+  color: #95a5a6;
+}
+
+#save, #reset {
+  width: auto;
+}
+
+.description{
+  font-size: 15px;
+  color: #7f8c8d;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.optionsTitle{
+  margin-top: 0;
+  /* margin-left: 10px; */
+  font-size: 25px;
+  justify-content: flex-start !important;
+}
+
+input[type="checkbox"],
+#sideBySide{
+  height: 25px;
+  width: 25px;
+}
+
+.sideBySideContainer{
+  margin: 10px 0;
+}
+.sideBySideContainer label{
+  width: auto;
+  margin-right:15px;
+}
+
+input[type="checkbox"]:checked::before {
+  content:" \2713";
+  background: none;
+  font-size: 1.7em;
+}
+
+
+/* --------------------- browser file input --------------------- */
+/*- LOAD -*/
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile + label {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  display: inline-block;
+}
+
+/* -------------------Toggle button------------------*/
+/*
+  Thanks to Mauricio Allende
+  simplified from https://codepen.io/mallendeo/pen/eLIiG?editors=1000
+*/
+
+.tgl-btn {
+  box-sizing: border-box;
+  display: block;
+  width: 4em;
+  height: 2em;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  padding: 2px;
+  transition: all 0.2s ease;
+  background: #fff;
+  border: 2px solid #f2f2f2;
+  border-radius: 2em;
+}
+.tgl-btn:after {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+  transition: all 0.2s ease;
+  background: #f2f2f2;
+  content: "";
+  border-radius: 1em;
+  left: 0;
+}
+.tgl-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+  display: none;
+}
+
+.tgl-flat {
+  display: none;
+}
+.tgl-flat:checked + .tgl-btn {
+  border: 1px solid var(--main-color);
+}
+.tgl-flat:checked + .tgl-btn:after {
+  left: 50%;
+  background: var(--main-color);
+}
+
+/***************************************************************
+**************************** Theme *****************************
+****************************************************************/
+:root {
+  --main-color: #95a5a6;
+  --accent-color: #7f8c8d;
+  --text-color: #ecf0f1;
+  /* --background-color: #FFF; */
+  --background-color: aliceblue;
+  --text-size: 15px;
+  --icon-size: 27px;
+  --button-height:35px;
+  --button-radius: 15px;
+/*  --text-size: 18px;
+  --icon-size: 30px;
+  --button-height:50px;*/
+}
+
+/*4d606e*/
+/*
+  // full-flat style - kinda cool :)
+   --main-color: #769fcd;
+  --accent-color: #d6e6f2;
+  --text-color: #222831;
+  --background-color: #d6e6f2;
+
+dark good background colors
+    --main-color: #95a5a6;
+    --accent-color: #7f8c8d;
+    --text-color: #ecf0f1;
+    --background-color: #4D6071;
+
+  --main-color: #566B7A;
+  --accent-color: #3B4A54;
+  --text-color: #A1B1B3;
+  --background-color: #4D6071;
+
+    --main-color: #566B7A;
+  --accent-color: #3B4A54;
+  --text-color: #d6e6f2;
+  --background-color: #4D6071;
+
+
+ */
+.lightTheme,
+.lightTheme .ts_theme {
+  --main-color: #95a5a6;
+  --accent-color: #7f8c8d;
+  --text-color: #ecf0f1;
+  --background-color: #FFF;
+  --background-color: aliceblue;
+  --text-size: 15px;
+  --icon-size: 27px;
+  --button-height:35px;
+}
+
+.darkTheme,
+.darkTheme .ts_theme {
+  --main-color: #566B7A;
+  --accent-color: #3B4A54;
+  --text-color: #A1B1B3;
+  --background-color: #4D606C;
+  --text-size: 15px;
+  --icon-size: 27px;
+  --button-height: 40px;
+}
+
+html, body {
+  background: var(--background-color);
+  font-size: var(--text-size);
+}
+
+html{
+  /* scroll-margin: 30px; */
+  /* overscroll-behavior: auto contain; */
+}
+
+ body {
+  /* height: 1800px; */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-grow: 2;
+  flex-basis: 0%;
+  min-height: 0; /* NEW */
+  min-width: 0; /* NEW */
+  height: fit-content;
+}
+
+.ts_theme {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-size: var(--text-size);
+  margin-bottom: 0px;
+  align-self: center;
+  height: 1200px;
+  /* background: aliceblue; */
+  height: fit-content;
+}
+
+.ts_theme .ts-icon{
+  font-size: var(--icon-size);
+  align-items: center;
+}
+
+.ts_theme .button{
+  box-shadow: 0px 6px var(--accent-color);
+  background: var(--main-color);
+  color: var(--text-color);
+  font-size: var(--text-size);
+  margin-bottom: 8%;
+  height: var(--button-height);
+  border-radius: var(--button-radius);
+}
+
+.ts_theme .button:active{
+  box-shadow: 0px 0px var(--accent-color);
+  background: var(--accent-color);
+  color: var(--text-color);
+}
+
+.githubBtn {
+  width: 50%;
+  flex-grow:initial
+}
+.full_compact {
+/*  --text-size: 13px;
+  --icon-size: 24px;
+  --button-height:30px;*/
+  --text-size: 15px;
+  --icon-size: 27px;
+  --button-height:35px;
+}
+
+.full_compact .column {
+  flex-flow: wrap;
+  justify-content: space-between;
+}
+.full_compact .button{
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.full_compact .ts-innerLabel {
+  display: none;
+  /*visibility: hidden;*/
+}
+
+.full_compact .flex-item {
+  width: auto;
+}
+
+.full_compact .ts-icon:before {
+  width: auto;
+}
+.full_compact .githubBtn{
+  width: auto;
+}
+
+
+
+
